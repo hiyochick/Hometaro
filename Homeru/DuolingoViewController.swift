@@ -12,11 +12,11 @@ class DuolingoViewController: UIViewController {
     
     //ユーザが選択した単語カードを表す
     @IBOutlet var tango1: UILabel!
-    @IBOutlet var tango2: UILabel!
-    @IBOutlet var tango3: UILabel!
-    @IBOutlet var tango4: UILabel!
-    @IBOutlet var tango5: UILabel!
-    @IBOutlet var tango6: UILabel!
+//    @IBOutlet var tango2: UILabel!
+//    @IBOutlet var tango3: UILabel!
+//    @IBOutlet var tango4: UILabel!
+//    @IBOutlet var tango5: UILabel!
+//    @IBOutlet var tango6: UILabel!
     
     //100個から選ばれたランダム12個の単語カードを入れる
     @IBOutlet var tan1: UIButton!
@@ -31,7 +31,10 @@ class DuolingoViewController: UIViewController {
     @IBOutlet var tan10: UIButton!
     @IBOutlet var tan11: UIButton!
     @IBOutlet var tan12: UIButton!
-    
+    @IBOutlet var tan13: UIButton!
+    @IBOutlet var tan14: UIButton!
+    @IBOutlet var tan15: UIButton!
+
     //time
     @IBOutlet var timerLabel: UILabel!
     //timer用変数
@@ -40,7 +43,7 @@ class DuolingoViewController: UIViewController {
     
     
 
-    var kansai = ["あんた", "好きやねん", "シュッとしてるし", "うまいよなあ", "ほんま", "しらんけど", "なんていうか", "頼りにしてるで", "ええ人すぎ", "さすがに", "いくらなんでも", "やばいって", "エグい", "かいらして", "しゃーない", "ええ加減", "センスええわあ", "そういうとこ", "あの時", "助かった", "ええとこ", "ないやんか", "誰とでも", "仲良いし", "オチも", "うまいし", "なかなか", "いつ見ても", "笑顔", "尊敬するわ", "どうやって", "老若男女", "ほんまに", "一緒に", "いたいって", "思うねん", "イケてる", "今日の服", "昨日さ", "助けてくれたやんか", "しんどくても", "おもろい", "いっちゃん", "せやねん", "好きやわ", "いつまでも", "そのままで", "なんぼ", "ちゃう", "かいらして", "似合いすぎ", "日本で", "大阪で", "たこ焼き", "作るん", "誰より", "料理", "行きたい", "あんたとなら", "と", "昔さ", "家", "で", "に", "言いたい", "みんな", "ええやんか", "むずすぎ", "やって", "ありえへん", "ねん", "やで", "わあ", "やっぱ", "うそやん", "学校", "気使える", "言うてる", "してくれる", "やん", "仕事でも", "大変やのに", "やし", "努力家", "気取らん", "感じ", "真似したい", "どうやったら", "うちの", "通天閣", "しよや", "登ろ", "まだまだ", "いける", "見えへん", "ええて", "意味わからん", "かっこええ", "上手に", "やんか", "なんなん", "まじで", "ほんま", "イケてる", "メイク", "親御さん", "優しい", "親孝行", "仲良し", "頼れる", "小さい", "時間通り", "来るし", "なんでも", "言うたって", "おかしい", "任しとき", "任せた", "いっちゃん", "ケチくさい", "自分", "なんか考えられへん", "キッツい", "勉強", "泣くて", "やて", "めっちゃ", "細かい", "話しやすい", "大きい","なあ", "せやな", "ぼちぼち", "おおきに", "ちゃうな", "ゆーて", "ほな", "さいなら", "ゲラ", "しんど", "おもんな", "どないなってんねん", "ええでっか", "あかん", "おとん", "おかん", "いけず", "大阪城", "くれへんし", "大阪LOVER", "なにわ", "なれへんし", "近そうでまだ遠い", "まいど", "どっひゃー", "まだ", "恋しい", "すごいなあ", "ええねん", "えらい", "人", "犬", "赤ん坊", "おっちゃん", "おばちゃん", "よそもん", "道頓堀", "作ろや", "ごっつい", "あほらし", "なってんねん", "まって", "やさし", "やろ", "モテる", "うますぎ", "配慮", "できひん", "知らんがな", "知らんし", "ちゃうねん", "マジで", "行けたら行く", "しばいたって", "惚れてまう", "正直", "近所の", "奢って", "気にしい", "ぼんぼん", "金持ち", "ガンガン", "オチ", "ボケて", "ツッコむん", "ツッコんで", "なんでやねん", "コテコテ", "関西弁", "そうなん", "そんなん", "ちゃうんかい", "せめて", "でっしゃろ", "アホ", "アレ", "阪神", "勝ったのも", "あんたの", "おかげさんで", "おもろすぎる", "なんやねん", "ぱちもん", "さらの", "べっぴん", "捕まえて", "見たい", "したい", "人懐っこい", "ひやかす", "かまへん", "もっぺん", "いらち", "かなんわ", "めちゃめちゃ", "しゃべり", "ぎょうさん", "ほっといても", "すんません", "そない", "自分", "えらいこっちゃ", "ほなまた", "ええかげん", "ええわ", "たまらん", "まだまだ", "やろ", "よーさん", "なんべん", "おぼこい", "白い", "赤い", "黒い", "表情", "感情", "涙脆い", "ほんで", "わりかし", "しゃれてる", "心強い", "信じられへん", "センス", "なし", "あり", "よりの", "ますます", "楽しみにしてんで", "たいそう", "豹柄",
+    var kansai = ["あんた", "好きやねん", "シュッとしてるし", "うまいよなあ", "ほんま", "しらんけど", "なんていうか", "頼りにしてるで", "ええ人すぎ", "さすがに", "いくらなんでも", "やばいって", "エグい", "かいらして", "しゃーない", "ええ加減", "センスええわあ", "そういうとこ", "あの時", "助かった", "ええとこ", "ないやんか", "誰とでも", "仲良いし", "オチも", "うまいし", "なかなか", "いつ見ても", "笑顔", "尊敬するわ", "どうやって", "老若男女", "ほんまに", "一緒に", "いたいって", "思うねん", "イケてる", "今日の服", "昨日さ", "助けてくれたやんか", "しんどくても", "おもろい", "いっちゃん", "せやねん", "好きやわ", "いつまでも", "そのままで", "なんぼ", "ちゃう", "かいらして", "似合いすぎ", "日本で", "大阪で", "たこ焼き", "作るん", "誰より", "料理", "行きたい", "あんたとなら", "と", "昔さ", "家", "で", "に", "言いたい", "みんな", "ええやんか", "むずすぎ", "やって", "ありえへん", "ねん", "やで", "わあ", "やっぱ", "うそやん", "学校", "気使える", "言うてる", "してくれる", "やん", "仕事でも", "大変やのに", "やし", "努力家", "気取らん", "感じ", "真似したい", "どうやったら", "うちの", "通天閣", "しよや", "登ろ", "まだまだ", "いける", "見えへん", "ええて", "意味わからん", "かっこええ", "上手に", "やんか", "なんなん", "まじで", "ほんま", "イケてる", "メイク", "親御さん", "優しい", "親孝行", "仲良し", "頼れる", "小さい", "時間通り", "来るし", "なんでも", "言うたって", "おかしい", "任しとき", "任せた", "いっちゃん", "ケチくさい", "自分", "なんか考えられへん", "キッツい", "勉強", "泣くて", "せやさかい", "めっちゃ", "細かい", "話しやすい", "大きい","なあ", "せやな", "ぼちぼち", "おおきに", "ちゃうな", "ゆーて", "ほな", "さいなら", "ゲラ", "しんど", "おもんな", "どないなってんねん", "ええでっか", "あかん", "おとん", "おかん", "いけず", "大阪城", "くれへんし", "大阪LOVER", "なにわ", "なれへんし", "近そうでまだ遠い", "まいど", "どっひゃー", "まだ", "恋しい", "すごいなあ", "ええねん", "えらい", "人", "犬", "赤ん坊", "おっちゃん", "おばちゃん", "よそもん", "道頓堀", "作ろや", "ごっつい", "あほらし", "なってんねん", "まって", "やさし", "やろ", "モテる", "うますぎ", "配慮", "できひん", "知らんがな", "知らんし", "ちゃうねん", "マジで", "行けたら行く", "しばいたって", "惚れてまう", "正直", "近所の", "奢って", "気にしい", "ぼんぼん", "金持ち", "ガンガン", "オチ", "ボケて", "ツッコむん", "ツッコんで", "なんでやねん", "コテコテ", "関西弁", "そうなん", "そんなん", "ちゃうんかい", "せめて", "でっしゃろ", "アホ", "アレ", "阪神", "勝ったのも", "あんたの", "おかげさんで", "おもろすぎる", "なんやねん", "ぱちもん", "さらの", "べっぴんさん", "捕まえて", "見たい", "したい", "人懐っこい", "ひやかす", "かまへん", "もっぺん", "いらち", "かなんわ", "めちゃめちゃ", "しゃべり", "ぎょうさん", "ほっといても", "すんません", "そない", "自分", "えらいこっちゃ", "ほなまた", "ええかげん", "ええわ", "たまらん", "まだまだ", "やろ", "よーさん", "なんべん", "おぼこい", "さかい", "赤い", "黒い", "表情", "感情", "おたくの", "ほんで", "わりかし", "しゃれてる", "心強い", "信じられへん", "センス", "なし", "あり", "よりの", "ますます", "楽しみにしてんで", "たいそう", "豹柄",
                   
     ]
     
@@ -94,6 +97,13 @@ class DuolingoViewController: UIViewController {
         tan11.layer.borderColor = UIColor.brown.cgColor
         tan12.layer.borderWidth = 1.0
         tan12.layer.borderColor = UIColor.brown.cgColor
+        tan13.layer.borderWidth = 1.0
+        tan13.layer.borderColor = UIColor.brown.cgColor
+        tan14.layer.borderWidth = 1.0
+        tan14.layer.borderColor = UIColor.brown.cgColor
+        tan15.layer.borderWidth = 1.0
+        tan15.layer.borderColor = UIColor.brown.cgColor
+
 
 
 
@@ -104,7 +114,7 @@ class DuolingoViewController: UIViewController {
         kansai.shuffle()
         
         // ランダムな数値を生成
-        let randomNum = RandomNum(count: 12, min: 1, max: 200)
+        let randomNum = RandomNum(count: 15, min: 1, max: 200)
 
         // 12個の変数に代入
         let n1 = randomNum[0]
@@ -119,7 +129,10 @@ class DuolingoViewController: UIViewController {
         let n10 = randomNum[9]
         let n11 = randomNum[10]
         let n12 = randomNum[11]
-        
+        let n13 = randomNum[12]
+        let n14 = randomNum[13]
+        let n15 = randomNum[14]
+
         tan1.setTitle(kansai[n1], for: .normal)
         tan2.setTitle(kansai[n2], for: .normal)
         tan3.setTitle(kansai[n3], for: .normal)
@@ -132,7 +145,10 @@ class DuolingoViewController: UIViewController {
         tan10.setTitle(kansai[n10], for: .normal)
         tan11.setTitle(kansai[n11], for: .normal)
         tan12.setTitle(kansai[n12], for: .normal)
-        
+        tan13.setTitle(kansai[n13], for: .normal)
+        tan14.setTitle(kansai[n14], for: .normal)
+        tan15.setTitle(kansai[n15], for: .normal)
+
         update_label()
 
     }
@@ -202,113 +218,187 @@ class DuolingoViewController: UIViewController {
     
     @IBAction func reset () {
         selected.removeAll()
+        // 全てのボタンの有効化
+        tan1.isEnabled = true
+        tan2.isEnabled = true
+        tan3.isEnabled = true
+        tan4.isEnabled = true
+        tan5.isEnabled = true
+        tan6.isEnabled = true
+        tan7.isEnabled = true
+        tan8.isEnabled = true
+        tan9.isEnabled = true
+        tan10.isEnabled = true
+        tan11.isEnabled = true
+        tan12.isEnabled = true
+        tan13.isEnabled = true
+        tan14.isEnabled = true
+        tan15.isEnabled = true
+        
+        tan1.layer.borderColor = UIColor.brown.cgColor
+        tan2.layer.borderColor = UIColor.brown.cgColor
+        tan3.layer.borderColor = UIColor.brown.cgColor
+        tan4.layer.borderColor = UIColor.brown.cgColor
+        tan5.layer.borderColor = UIColor.brown.cgColor
+        tan6.layer.borderColor = UIColor.brown.cgColor
+        tan7.layer.borderColor = UIColor.brown.cgColor
+        tan8.layer.borderColor = UIColor.brown.cgColor
+        tan9.layer.borderColor = UIColor.brown.cgColor
+        tan10.layer.borderColor = UIColor.brown.cgColor
+        tan11.layer.borderColor = UIColor.brown.cgColor
+        tan12.layer.borderColor = UIColor.brown.cgColor
+        tan13.layer.borderColor = UIColor.brown.cgColor
+        tan14.layer.borderColor = UIColor.brown.cgColor
+        tan15.layer.borderColor = UIColor.brown.cgColor
+        
         update_label()
         //selected.removeAtIndex(0) やと1つずつ
     }
     
     func update_label(){
-        tango1.text = selected.count > 0 ? selected[0] : ""
-        tango2.text = selected.count > 1 ? selected[1] : ""
-        tango3.text = selected.count > 2 ? selected[2] : ""
-        tango4.text = selected.count > 3 ? selected[3] : ""
-        tango5.text = selected.count > 4 ? selected[4] : ""
-        tango6.text = selected.count > 5 ? selected[5] : ""
+        let combined = selected.joined(separator: " ")
+        tango1.text = combined
+//        selected.count > 0 ? selected[0] : ""
+//        tango2.text = selected.count > 1 ? selected[1] : ""
+//        tango3.text = selected.count > 2 ? selected[2] : ""
+//        tango4.text = selected.count > 3 ? selected[3] : ""
+//        tango5.text = selected.count > 4 ? selected[4] : ""
+//        tango6.text = selected.count > 5 ? selected[5] : ""
     }
 
     //選択したボタンのTitleを配列selectedに格納
     @IBAction func tan1Tapped(_ sender: UIButton) {
-        //let title = sender.title(for: .normal)
+        tan1.layer.borderColor = UIColor.systemYellow.cgColor
         if let title = tan1.currentTitle {
             selected.append(title)
+            sender.isEnabled = false
             update_label()
         }
     }   
     
     @IBAction func tan2Tapped(_ sender: UIButton) {
-        //let title = sender.title(for: .normal)
+        tan2.layer.borderColor = UIColor.systemYellow.cgColor
         if let title = tan2.currentTitle {
             selected.append(title)
+            sender.isEnabled = false
             update_label()
         }
     }   
     
     @IBAction func tan3Tapped(_ sender: UIButton) {
-        //let title = sender.title(for: .normal)
+        tan3.layer.borderColor = UIColor.systemYellow.cgColor
         if let title = tan3.currentTitle {
             selected.append(title)
+            sender.isEnabled = false
             update_label()
         }
     }  
     
     @IBAction func tan4Tapped(_ sender: UIButton) {
-        //let title = sender.title(for: .normal)
+        tan4.layer.borderColor = UIColor.systemYellow.cgColor
         if let title = tan4.currentTitle {
             selected.append(title)
+            sender.isEnabled = false
             update_label()
         }
     } 
     
     @IBAction func tan5Tapped(_ sender: UIButton) {
-        //let title = sender.title(for: .normal)
+        tan5.layer.borderColor = UIColor.systemYellow.cgColor
         if let title = tan5.currentTitle {
             selected.append(title)
+            sender.isEnabled = false
             update_label()
         }
     }  
     
     @IBAction func tan6Tapped(_ sender: UIButton) {
-        //let title = sender.title(for: .normal)
+        tan6.layer.borderColor = UIColor.systemYellow.cgColor
         if let title = tan6.currentTitle {
             selected.append(title)
+            sender.isEnabled = false
             update_label()
         }
     } 
     
     @IBAction func tan7Tapped(_ sender: UIButton) {
-        //let title = sender.title(for: .normal)
+        tan7.layer.borderColor = UIColor.systemYellow.cgColor
         if let title = tan7.currentTitle {
             selected.append(title)
+            sender.isEnabled = false
             update_label()
         }
     } 
     
     @IBAction func tan8Tapped(_ sender: UIButton) {
-        //let title = sender.title(for: .normal)
+        tan8.layer.borderColor = UIColor.systemYellow.cgColor
         if let title = tan8.currentTitle {
             selected.append(title)
+            sender.isEnabled = false
             update_label()
         }
     }  
     
     @IBAction func tan9Tapped(_ sender: UIButton) {
-        //let title = sender.title(for: .normal)
+        tan9.layer.borderColor = UIColor.systemYellow.cgColor
         if let title = tan9.currentTitle {
             selected.append(title)
+            sender.isEnabled = false
             update_label()
         }
     } 
     
     @IBAction func tan10Tapped(_ sender: UIButton) {
-        //let title = sender.title(for: .normal)
+        tan10.layer.borderColor = UIColor.systemYellow.cgColor
         if let title = tan10.currentTitle {
             selected.append(title)
+            sender.isEnabled = false
             update_label()
         }
     } 
     
     @IBAction func tan11Tapped(_ sender: UIButton) {
-        //let title = sender.title(for: .normal)
+        tan11.layer.borderColor = UIColor.systemYellow.cgColor
         if let title = tan11.currentTitle {
             selected.append(title)
+            sender.isEnabled = false
             update_label()
         }
     } 
     
     @IBAction func tan12Tapped(_ sender: UIButton) {
-        //let title = sender.title(for: .normal)
+        tan12.layer.borderColor = UIColor.systemYellow.cgColor
         if let title = tan12.currentTitle {
             selected.append(title)
+            sender.isEnabled = false
             update_label()
+        }
+    }
+    
+    @IBAction func tan13Tapped(_ sender: UIButton) {
+        tan13.layer.borderColor = UIColor.systemYellow.cgColor
+        if let title = tan13.currentTitle {
+            selected.append(title)
+            sender.isEnabled = false
+            update_label()
+        }
+    }
+    
+    @IBAction func tan14Tapped(_ sender: UIButton) {
+        tan14.layer.borderColor = UIColor.systemYellow.cgColor
+        if let title = tan14.currentTitle {
+            selected.append(title)
+            sender.isEnabled = false
+            update_label()
+        }
+    }
+    
+    @IBAction func tan15Tapped(_ sender: UIButton) {
+        tan15.layer.borderColor = UIColor.systemYellow.cgColor
+        if let title = tan15.currentTitle {
+            selected.append(title)
+            update_label()
+            sender.isEnabled = false
         }
     }
  

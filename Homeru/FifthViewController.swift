@@ -9,8 +9,11 @@ import UIKit
 
 class FifthViewController: UIViewController {
 
+    @IBOutlet var moippen: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        moippen.isEnabled = false
 
     }
     

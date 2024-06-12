@@ -28,15 +28,7 @@ class HometaroViewController: UIViewController {
         home.layer.borderColor = UIColor.brown.cgColor
 
     }
-    
-//    func shareData() {
-//            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//            if let shareVC = storyboard.instantiateViewController(withIdentifier: "ShareViewController") as? ShareViewController {
-//                shareVC.shareData = receivedData
-//                self.present(shareVC, animated: true, completion: nil)
-//            }
-//
-//    }
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toNext" {
             let nextView = segue.destination as! ShareViewController
@@ -45,9 +37,4 @@ class HometaroViewController: UIViewController {
     }
 
     
-}
-extension Collection {
-    subscript (safe index: Index) -> Element? {
-        return indices.contains(index) ? self[index] : nil
-    }
 }

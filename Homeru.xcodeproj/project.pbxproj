@@ -60,7 +60,7 @@
 		632E50BB2BFC6F2100BAA929 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		632E50BD2BFC6F2100BAA929 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		632E50C32BFE007F00BAA929 /* DuolingoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DuolingoViewController.swift; sourceTree = "<group>"; };
-		634BF0A82C184A0200A8FB69 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		634BF0A82C184A0200A8FB69 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = PrivacyInfo.xcprivacy; path = Homeru/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		635361F72C14059300579F18 /* CourseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseViewController.swift; sourceTree = "<group>"; };
 		63E2228F2C141BF900A61EF3 /* HonaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HonaViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -79,6 +79,7 @@
 		632E50A32BFC6F1F00BAA929 = {
 			isa = PBXGroup;
 			children = (
+				634BF0A82C184A0200A8FB69 /* PrivacyInfo.xcprivacy */,
 				632E50AE2BFC6F1F00BAA929 /* Homeru */,
 				632E50AD2BFC6F1F00BAA929 /* Products */,
 			);
@@ -102,7 +103,6 @@
 				632E50B52BFC6F1F00BAA929 /* Main.storyboard */,
 				632E50B82BFC6F2100BAA929 /* Assets.xcassets */,
 				632E50BA2BFC6F2100BAA929 /* LaunchScreen.storyboard */,
-				634BF0A82C184A0200A8FB69 /* PrivacyInfo.xcprivacy */,
 				632E50BD2BFC6F2100BAA929 /* Info.plist */,
 				632E50C32BFE007F00BAA929 /* DuolingoViewController.swift */,
 				63234C772C02F7AB009507C0 /* HometaroViewController.swift */,
